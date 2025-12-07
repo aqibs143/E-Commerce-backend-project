@@ -1,0 +1,33 @@
+# === Build artifacts ===
+target/
+build/
+out/
+
+# === Maven & Gradle local wrapper cache ===
+.mvn/
+.gradle/
+
+# === IDE Configurations ===
+.vscode/
+.idea/
+*.iml
+*.iws
+*.ipr
+.classpath
+.project
+.settings/
+.apt_generated
+.factorypath
+.sts4-cache
+.springBeans
+
+# === Logs ===
+*.log
+
+# === JARs ===
+*.jar
+
+# === OS/System ===
+Thumbs.db
+.DS_Store
+
