@@ -29,5 +29,4 @@ public class LoginData {
 	public String toString() {
 		return "LoginData [username=" + username + ", password=" + password + "]";
 	}
-	
 }

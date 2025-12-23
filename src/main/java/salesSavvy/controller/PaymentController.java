@@ -123,9 +123,9 @@ public class PaymentController {
             }
 
             OrderItem oi = new OrderItem();
-            // use the correct setter name based on your OrderItem entity:
-            // if your entity uses setUserOrder(...) use that; if setOrder(...) exists make sure it's implemented.
-            oi.setUserOrder(order);                      // <- correct method in the provided entity
+            // use the correct setter name based on OrderItem entity:
+            // if entity uses setUserOrder(...) use that if setOrder(...) exists make sure it's implemented.
+            oi.setUserOrder(order);                      // correct method in the provided entity
             oi.setProduct(prod);                         // product setter exists
             oi.setQuantity(ci.getQuantity());
             oi.setPriceAtPurchase(prod.getPrice());

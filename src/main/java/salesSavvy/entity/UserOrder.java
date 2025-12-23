@@ -33,7 +33,7 @@ public class UserOrder {
     private Timestamp orderDate;
 
     @OneToMany(mappedBy = "userOrder", cascade = CascadeType.ALL, orphanRemoval = false)
-    @JsonManagedReference      // Must pair with @JsonBackReference in OrderItem
+    @JsonManagedReference      // pair with @JsonBackReference in OrderItem
     private List<OrderItem> items = new ArrayList<>();
 
     public UserOrder() {}

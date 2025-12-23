@@ -25,17 +25,14 @@ public class OrderController {
 
     @Autowired
     private OrderService orderService;
+    
     @PostMapping("/checkout")
     @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<UserOrder> checkout(@RequestBody CheckoutRequest request) {
         UserOrder userOrder = orderService.checkout(request);
         return ResponseEntity.ok(userOrder);
     }
-//    @GetMapping("/history")
-//    public ResponseEntity<List<UserOrder>> getOrderHistory(@RequestParam String username) {
-//        List<UserOrder> userOrders = orderService.getOrdersByUser(username);
-//        return ResponseEntity.ok(userOrders);
-//    }
+    
     @GetMapping("/history")
     public ResponseEntity<List<OrderHistoryDTO>> getOrderHistory(@RequestParam String username) {
 
@@ -54,6 +51,4 @@ public class OrderController {
         orderService.updateStatus(orderId, status);
         return ResponseEntity.ok("UserOrder status updated successfully");
     }
-
-
 }

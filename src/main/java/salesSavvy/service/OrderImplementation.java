@@ -96,11 +96,7 @@ public class OrderImplementation implements OrderService {
                 .orElseThrow(() -> new RuntimeException("UserOrder not found"));
         userOrder.setStatus(status);
     }
-//	@Override
-//	public List<OrderHistoryDTO> getOrderHistory(String username) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
+
     public List<OrderHistoryDTO> getOrderHistory(String username) {
 
     User user = userRepo.findByUsername(username)
@@ -139,12 +135,9 @@ public class OrderImplementation implements OrderService {
         dto.setItems(itemDTOs);
 
         out.add(dto);
-    }
+    	}
 
     return out;
-}
-
-
-
+    }
 
 }

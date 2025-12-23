@@ -22,7 +22,5 @@ public class CheckoutRequest {
 	}
 	public void setPaymentMode(String paymentMode) {
 		this.paymentMode = paymentMode;
-	}
-
-    
+	}  
 }

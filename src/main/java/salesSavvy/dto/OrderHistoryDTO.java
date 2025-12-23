@@ -53,7 +53,5 @@ public class OrderHistoryDTO {
 	}
 	public void setItems(List<OrderItemDTO> items) {
 		this.items = items;
-	}
-
-   
+	} 
 }

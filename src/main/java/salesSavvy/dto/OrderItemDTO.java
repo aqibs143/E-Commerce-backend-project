@@ -46,5 +46,4 @@ public class OrderItemDTO {
 	public void setPriceAtPurchase(double priceAtPurchase) {
 		this.priceAtPurchase = priceAtPurchase;
 	}
-
 }
