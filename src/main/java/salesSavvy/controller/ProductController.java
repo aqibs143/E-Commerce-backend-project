@@ -25,7 +25,7 @@ public class ProductController {
     }
   
      // UPDATE PRODUCT
-    @PostMapping("/updateProduct")
+    @PutMapping("/updateProduct")
     public ResponseEntity<?> updateProduct(@RequestBody Product prod) {
         Product updated = service.updateProduct(prod);
         return ResponseEntity.ok(updated);

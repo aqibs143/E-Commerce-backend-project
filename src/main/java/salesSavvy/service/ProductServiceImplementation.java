@@ -3,6 +3,7 @@ package salesSavvy.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -35,15 +36,31 @@ public class ProductServiceImplementation implements ProductService {
 
     @Override
     public Product updateProduct(Product prod) {
+
         if (prod == null || prod.getId() == null) {
-            throw new ResponseStatusException(org.springframework.http.HttpStatus.BAD_REQUEST, "Product or id missing for update");
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "Product or id missing for update"
+            );
         }
 
-        if (!repo.existsById(prod.getId())) {
-            throw new ResponseStatusException(org.springframework.http.HttpStatus.NOT_FOUND, "Product not found");
-        }
+        Product existing = repo.findById(prod.getId())
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "Product not found"
+                ));
 
-        return repo.save(prod);
+        // Update ONLY allowed fields
+        existing.setName(prod.getName());
+        existing.setDescription(prod.getDescription());
+        existing.setPrice(prod.getPrice());
+        existing.setImage(prod.getImage());
+
+        // OPTIONAL (only if allowed)
+        // existing.setStockQuantity(prod.getStockQuantity());
+        // existing.setSku(prod.getSku());
+
+        return repo.save(existing);
     }
 
     @Override

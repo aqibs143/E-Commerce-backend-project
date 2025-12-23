@@ -37,6 +37,4 @@ public class CartData {
 	public String toString() {
 		return "CartData [username=" + username + ", productId=" + productId + ", quantity=" + quantity + "]";
 	}
-	
-	
 }

@@ -23,6 +23,7 @@ public class CartItem {
     public CartItem() {
     	
     }
+    
     public CartItem(Cart cart, Product prod, Integer quantity) {
         this.cart = cart;
         this.prod = prod;
@@ -32,24 +33,31 @@ public class CartItem {
 	public Long getId() {
 		return id;
 	}
+	
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
 	public Cart getCart() {
 		return cart;
 	}
+	
 	public void setCart(Cart cart) {
 		this.cart = cart;
 	}
+	
 	public Product getProd() {
 		return prod;
 	}
+	
 	public void setProd(Product prod) {
 		this.prod = prod;
 	}
+	
 	public int getQuantity() {
 		return quantity;
 	}
+	
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
