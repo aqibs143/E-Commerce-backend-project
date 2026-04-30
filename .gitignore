@@ -4,7 +4,7 @@ build/
 out/
 
 # === Maven & Gradle local wrapper cache ===
-.mvn/
+
 .gradle/
 
 # === IDE Configurations ===
