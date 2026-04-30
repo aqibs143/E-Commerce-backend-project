@@ -4,7 +4,7 @@ public class CartItemDTO {
     private Long productId;
     private String name;
     private String description;
-    private Double price;   // FIXED TO DOUBLE
+    private Double price;   
     private String image;
     private Integer quantity;
 
