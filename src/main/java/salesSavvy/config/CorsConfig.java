@@ -18,7 +18,7 @@ public class CorsConfig {
 
 	    config.setAllowedOrigins(List.of(
 	        "http://localhost:3000",
-	        "https://your-vercel-app.vercel.app"
+	        "https://ecommerce-frontend-oii1.vercel.app"
 	    ));
 
 	    config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
