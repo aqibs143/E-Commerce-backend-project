@@ -2,10 +2,9 @@
 target/
 build/
 out/
-
 application-local.properties
-# === Maven & Gradle local wrapper cache ===
 
+# === Maven & Gradle local wrapper cache ===
 .gradle/
 
 # === IDE Configurations ===
@@ -26,9 +25,16 @@ application-local.properties
 *.log
 
 # === JARs ===
-*.jar
+target/*.jar
+!.mvn/wrapper/maven-wrapper.jar
+
+# === Secrets & Environment ===
+*.env
+.env
+application-*.properties
+!application.properties
 
 # === OS/System ===
 Thumbs.db
 .DS_Store
-
+desktop.ini
