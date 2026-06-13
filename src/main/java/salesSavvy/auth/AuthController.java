@@ -28,12 +28,17 @@ public class AuthController 	{
     public ResponseEntity<String> login(@RequestBody LoginData loginData) {
 
         // Authenticate credentials
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        loginData.getUsername(),
-                        loginData.getPassword()
-                )
-        );
+        try {
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(
+                            loginData.getUsername(),
+                            loginData.getPassword()
+                    )
+            );
+        } catch (Exception e) {
+            return ResponseEntity.status(401).body("Bad credentials: " + e.getMessage());
+        }
+
 
         // Fetch user from DB
         User user = userRepository
