@@ -11,13 +11,13 @@ import salesSavvy.service.ProductService;
 
 @RestController
 @RequestMapping("/products")
-@CrossOrigin(origins = "http://localhost:3000")  // adjust if needed
+@CrossOrigin(origins = "http://localhost:3000")
 public class ProductController {
 
     @Autowired
     private ProductService service;
   
-     //ADD PRODUCT
+     // ADD PRODUCT
     @PostMapping("/addProduct")
     public ResponseEntity<?> addProduct(@RequestBody Product prod) {
         Product saved = service.addProduct(prod);

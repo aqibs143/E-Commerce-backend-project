@@ -36,7 +36,7 @@ public class PaymentController {
     private static final String RAZOR_SECRET = "KMI7TRVgCayp1BvrtWvIQ6X1";
 
   
-    //  CREATE RAZORPAY ORDER
+    //  CREATED RAZORPAY ORDER
     @PostMapping("/create-order")
     public ResponseEntity<?> createOrder(@RequestParam String username) throws Exception {
 
@@ -46,7 +46,7 @@ public class PaymentController {
         Cart cart = cartRepo.findByUser(user)
                 .orElseThrow(() -> new RuntimeException("Cart Not Found"));
 
-        // SUM in rupees using doubles safely, then convert to paise (long)
+        // SUM in rupees using doubles safely, then converted to paise (long)
         double totalRupees = cart.getItemList()
                 .stream()
                 .mapToDouble(ci -> {
@@ -56,7 +56,7 @@ public class PaymentController {
                 })
                 .sum();
 
-        // Convert to paise precisely (long)
+        // Converted to paise precisely (long)
         long amountInPaise = BigDecimal.valueOf(totalRupees)
                 .multiply(BigDecimal.valueOf(100))
                 .setScale(0, RoundingMode.HALF_UP)
@@ -123,8 +123,8 @@ public class PaymentController {
             }
 
             OrderItem oi = new OrderItem();
-            // use the correct setter name based on OrderItem entity:
-            // if entity uses setUserOrder(...) use that if setOrder(...) exists make sure it's implemented.
+            // used the correct setter name based on OrderItem entity:
+            // if entity uses setUserOrder(...) use that if setOrder(...)
             oi.setUserOrder(order);                      // correct method in the provided entity
             oi.setProduct(prod);                         // product setter exists
             oi.setQuantity(ci.getQuantity());

@@ -18,7 +18,7 @@ public interface CartItemRepository extends JpaRepository<CartItem, Long> {
 
     /**
      * Nullify the product reference in cart items for the given product id.
-     * Adjust `c.prod` if your CartItem entity uses a different field name for the Product relation.
+     * Adjust `c.prod` if CartItem entity uses a different field name for the Product relation.
      */
     @Modifying
     @Transactional

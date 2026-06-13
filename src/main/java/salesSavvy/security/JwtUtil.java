@@ -14,7 +14,6 @@ public class JwtUtil {
     private static final String SECRET_KEY =
             "salesSavvy_super_secret_key_1234567890";
 
-    // UPDATED METHOD
     public String generateToken(String username, String role) {
 
         Map<String, Object> claims = new HashMap<>();

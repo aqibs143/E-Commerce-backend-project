@@ -19,7 +19,7 @@ public interface OrderItemRepository extends JpaRepository<OrderItem, Long> {
 
     /**
      * Nullify the product relation for all OrderItem rows that reference the given product id.
-     * IMPORTANT: JPQL uses entity field names — `oi.product` must match the field name in OrderItem.
+     * IMP: JPQL uses entity field names — `oi.product` must match the field name in OrderItem.
      */
     @Modifying
     @Transactional
