@@ -3,6 +3,7 @@ target/
 build/
 out/
 
+application-local.properties
 # === Maven & Gradle local wrapper cache ===
 
 .gradle/
