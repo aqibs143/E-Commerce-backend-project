@@ -16,10 +16,10 @@ public class CorsConfig {
 
 	    CorsConfiguration config = new CorsConfiguration();
 
-	    config.setAllowedOrigins(List.of(
-	        "http://localhost:3000",
-	        "https://your-vercel-app.vercel.app"
-	    ));
+		config.setAllowedOrigins(List.of(
+				"http://localhost:3000",
+				"https://ecommerce-frontend-oii1.vercel.app"  // URL
+		));
 
 	    config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 	    config.setAllowedHeaders(List.of("*"));
