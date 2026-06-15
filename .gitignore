@@ -31,8 +31,7 @@ target/*.jar
 # === Secrets & Environment ===
 *.env
 .env
-application-*.properties
-!application.properties
+application.properties
 
 # === OS/System ===
 Thumbs.db
